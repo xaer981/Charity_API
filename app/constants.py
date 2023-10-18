@@ -36,8 +36,12 @@ INVESTED_AMOUNT_DEFAULT = 0
 NAME_MAX_LENGTH = 100
 NAME_MIN_LENGTH = 1
 
+# Validators constants
+MIN_AMOUNT_TO_CHECK_INVESTED = 0
+
 # Google table constants
 SHEET_COLUMN_COUNT = 11
+SHEET_DATETIME_FORMAT = '%Y/%m/%d %H:%M:%S'
 SHEET_ID = 0
 SHEET_LOCALE = 'ru_RU'
 SHEET_NAME = 'Отчет на {now}'

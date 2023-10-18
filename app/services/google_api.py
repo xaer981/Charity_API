@@ -2,16 +2,14 @@ from datetime import datetime, timedelta
 
 from aiogoogle import Aiogoogle
 
-from app.constants import (SHEET_COLUMN_COUNT, SHEET_ID, SHEET_LOCALE,
-                           SHEET_NAME, SHEET_ROW_COUNT, SHEET_TITLE,
-                           SHEET_TYPE)
+from app.constants import (SHEET_COLUMN_COUNT, SHEET_DATETIME_FORMAT, SHEET_ID,
+                           SHEET_LOCALE, SHEET_NAME, SHEET_ROW_COUNT,
+                           SHEET_TITLE, SHEET_TYPE)
 from app.core.config import settings
-
-FORMAT = "%Y/%m/%d %H:%M:%S"
 
 
 async def spreadsheets_create(wrapper_services: Aiogoogle) -> str:
-    now = datetime.now().strftime(FORMAT)
+    now = datetime.now().strftime(SHEET_DATETIME_FORMAT)
     service = await wrapper_services.discover('sheets', 'v4')
     spreadsheet_body = {
         'properties': {'title': SHEET_NAME.format(now=now),
@@ -52,7 +50,7 @@ async def spreadsheets_update_value(
         projects: list,
         wrapper_services: Aiogoogle
 ) -> None:
-    now_date_time = datetime.now().strftime(FORMAT)
+    now_date_time = datetime.now().strftime(SHEET_DATETIME_FORMAT)
     service = await wrapper_services.discover('sheets', 'v4')
     table_values = [
         ['Отчет от', now_date_time],

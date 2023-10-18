@@ -4,6 +4,7 @@ from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.constants import (DUPLICATE_PROJECT_MESSAGE,
+                           MIN_AMOUNT_TO_CHECK_INVESTED,
                            PROJECT_AMOUNT_LESS_INVESTED_MESSAGE,
                            PROJECT_CLOSED_CANT_EDIT_MESSAGE,
                            PROJECT_INVESTED_CANT_REMOVE_MESSAGE)
@@ -24,7 +25,7 @@ async def check_name_duplicate(project_name: str,
 
 async def check_charityproject_not_invested(
         charityproject: CharityProject) -> None:
-    if charityproject.invested_amount > 0:
+    if charityproject.invested_amount > MIN_AMOUNT_TO_CHECK_INVESTED:
 
         raise HTTPException(status_code=HTTPStatus.BAD_REQUEST,
                             detail=PROJECT_INVESTED_CANT_REMOVE_MESSAGE)
