@@ -1,41 +1,88 @@
 # QRKot
-Учебный проект, позволяющий создавать благотворительные фонды и отправлять нецелевые пожертвования (они автоматически распределяются по фондам (сначала - ранее созданные).
+Проект позволяет создавать благотворительные фонды и отправлять нецелевые пожертвования.
+
+
+## Возможности:
+- Создание и управление проектами.
+
+  У каждого проекта есть название, описание и сумма, которую планируется собрать.
+  Все пожертвования идут в проект, открытый раньше других;
+  когда этот проект набирает необходимую сумму и закрывается — пожертвования начинают поступать в следующий проект.
+
+- Создание и просмотр пожертвований.
+
+  Каждый пользователь может сделать пожертвование.
+  Пожертвования вносятся в фонд, а не в конкретный проект.
+
+- Создание отчета по закрытым проектам.
+
+  В отчете отображаются закрытые проекты, отсортированные по скорости сбора средств.
+  В ответе передается ссылка на созданную электронную таблицу.
+
+- Алгоритм распределения пожертвований.
+
+  Каждое полученное пожертвование автоматически добавляется в первый открытый проект, который ещё не набрал нужную сумму.
+  Если пожертвование больше нужной суммы или же в Фонде нет открытых проектов — оставшиеся деньги ждут открытия следующего проекта.
+  При создании нового проекта все неинвестированные пожертвования автоматически вкладываются в новый проект.
+
+- Права пользователей.
+
+  Целевые проекты создаются администраторами сайта.
+  Любой пользователь может видеть список всех проектов.
+  Зарегистрированные пользователи могут отправлять пожертвования и просматривать список своих пожертвований.
 
 
 ## Технологии
-- [Python](https://www.python.org/)
-- [FastAPI](https://fastapi.tiangolo.com/)
-- [SQLAlchemy](http://www.sqlalchemy.org/)
-- [Alembic](https://alembic.sqlalchemy.org/)
-- [FastAPI Users](https://fastapi-users.github.io/fastapi-users/)
-- [Uvicorn](https://www.uvicorn.org/)
+- ![Static Badge](https://img.shields.io/badge/FastAPI-green)
+- ![Static Badge](https://img.shields.io/badge/SQLAlchemy-green)
+- ![Static Badge](https://img.shields.io/badge/Alembic-green)
+- ![Static Badge](https://img.shields.io/badge/Pydantic-green)
+- ![Static Badge](https://img.shields.io/badge/FastAPIUsers-green)
+- ![Static Badge](https://img.shields.io/badge/Uvicorn-green)
 ## Установка
-Копируем репозиторий:
-```
-git clone
-```
-Создаём и активируем виртуальное окружение:
-```
-python -m venv venv
-```
-```
-source venv/Scripts/activate (windows) / source venv/bin/activate (mac)
-```
 
-Устанавливаем зависимости:
-```
-pip install -r requirements.txt
-```
+1. Копируем репозиторий:
+   ```
+   git clone https://github.com/xaer981/QRkot_spreadsheets.git
+   ```
 
-Запускаем миграции
-```
-alembic upgrade head
-```
+2. Создаём и активируем виртуальное окружение:
 
-Запускаем сервер
-```
-uvicorn app.main:app
-```
+   На Windows:
+   ```
+   python -m venv venv
+   ```
+
+   ```
+   source venv/Scripts/activate
+   ```
+
+   На Mac:
+   ```
+   python3 -m venv venv
+   ```
+
+   ```
+   source venv/bin/activate
+   ```
+
+3. Устанавливаем зависимости:
+
+   ```
+   pip install -r requirements.txt
+   ```
+
+4. Запускаем миграции
+
+   ```
+   alembic upgrade head
+   ```
+
+5. Запускаем сервер
+
+   ```
+   uvicorn app.main:app
+   ```
 
 <p align=center>
   <a href="url"><img src="https://github.com/xaer981/xaer981/blob/main/main_cat.gif" align="center" height="40" width="128"></a>
