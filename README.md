@@ -43,7 +43,7 @@
 
 1. **Копируем репозиторий:**
    ```
-   git clone https://github.com/xaer981/QRkot_spreadsheets.git
+   git clone https://github.com/xaer981/Charity_API
    ```
 
 2. **Создаём и активируем виртуальное окружение:**
