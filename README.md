@@ -1,3 +1,5 @@
+[![Python 3.9 & Python 3.10 tests](https://github.com/xaer981/Charity_API/actions/workflows/python-package.yml/badge.svg)](https://github.com/xaer981/Charity_API/actions/workflows/python-package.yml)
+
 # Charity API 💰
 Проект позволяет создавать благотворительные фонды и отправлять нецелевые пожертвования.
 
