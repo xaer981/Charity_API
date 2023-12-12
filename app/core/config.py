@@ -1,6 +1,6 @@
 from typing import Optional
 
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
@@ -21,7 +21,8 @@ class Settings(BaseSettings):
     universe_domain: Optional[str] = None
     email: Optional[str] = None
 
-    model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8')
+    class Config:
+        env_file = '.env'
 
 
 settings = Settings()
