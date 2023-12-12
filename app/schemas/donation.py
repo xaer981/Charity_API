@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Optional
 
-from pydantic import BaseModel, PositiveInt
+from pydantic import BaseModel, PositiveInt, ConfigDict
 
 
 class DonationCreate(BaseModel):
@@ -13,8 +13,7 @@ class DonationRead(DonationCreate):
     id: int
     create_date: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class DonationDB(DonationRead):
