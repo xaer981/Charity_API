@@ -50,23 +50,37 @@
 
 2. **Создаём и активируем виртуальное окружение:**
 
-   На Windows:
-   ```
-   python -m venv venv
-   ```
+    <details>
+     <summary>Windows</summary>
 
-   ```
-   source venv/Scripts/activate
-   ```
+     ```bash
+     python -m venv venv
+     ```
 
-   На Mac:
-   ```
-   python3 -m venv venv
-   ```
+     ```bash
+     source venv/Scripts/activate
+     ```
 
-   ```
-   source venv/bin/activate
-   ```
+     ```bash
+     pip install -r requirements.txt
+     ```
+   </details>
+
+   <details>
+     <summary>MacOS / Linux</summary>
+
+      ```bash
+      python3 -m venv venv
+      ```
+
+      ```bash
+      source venv/bin/activate
+      ```
+
+      ```bash
+      pip install -r requirements.txt
+      ```
+   </details>
 
 3. **Устанавливаем зависимости:**
 
@@ -88,18 +102,18 @@
    - EMAIL - электронная почта пользователя, являющегося администратором в Google Cloud Platform
    - TYPE, PROJECT ID, PROJECT_KEY_ID, PRIVATE_KEY, CLIENT_EMAIL, CLIENT_ID, AUTH_URI, TOKEN_URI, AUTH_PROVIDER_X509_CERT_URL, CLIENT_X509_CERT_URL, UNIVERSE_DOMAIN скопируйте из JSON-файла, полученного в Google Cloud Platform.
 
-7. **Запускаем сервер:**
+6. **Запускаем сервер:**
 
    ```
    uvicorn app.main:app
    ```
 
-8. **Примеры запросов доступны по адресам:**
+> [!TIP]
+> Список запросов и примеры доступны по адресам:
+>   - `http://localhost:8000/docs` (Swagger)
+>   - `http://localhost:8000/docs` (ReDoc)
 
-   - `http://localhost:8000/docs` (Swagger)
-   - `http://localhost:8000/docs` (ReDoc)
-
-9. **Вы великолепны!** 🏆
+7. **Вы великолепны!** 🏆
 
 <p align=center>
   <a href="url"><img src="https://github.com/xaer981/xaer981/blob/main/main_cat.gif" align="center" height="40" width="128"></a>
